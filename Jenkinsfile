@@ -2,19 +2,17 @@
 pipeline {
     agent {
         node {
-            label 'docker_agent_python_template'
-            }
-      }
+            label 'java_spring_template'
+        }
+    }
     stages {
         stage('Build') {
             steps {
                 echo "Building.."
-                sh '''
-                echo "doing build stuff.."
-                '''
+                ls
             }
         }
-        stage('Test') {
+        stage('Save') {
             steps {
                 echo "Testing.."
                 sh '''
@@ -22,7 +20,7 @@ pipeline {
                 '''
             }
         }
-        stage('Deliver') {
+        stage('Deploy') {
             steps {
                 echo 'Deliver....'
                 sh '''
