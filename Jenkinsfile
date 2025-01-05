@@ -9,14 +9,16 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
+                sh '''
                 ls
+                '''
             }
         }
         stage('Save') {
             steps {
                 echo "Testing.."
                 sh '''
-                echo "doing test stuff..
+                echo "doing test stuff.."
                 '''
             }
         }
